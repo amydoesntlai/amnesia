@@ -1,0 +1,7 @@
+<% @words.each do |word| %>
+
+<div class='name'><%= link_to word.name, word_path(word) %></div>
+
+<% end %>
+
+<%= render 'form' %>

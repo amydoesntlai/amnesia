@@ -1,0 +1,7 @@
+<%= form_for @word = Word.new do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :definition %>
+	<%= f.text_field :definition %>
+	<%= f.submit %>
+<% end %>

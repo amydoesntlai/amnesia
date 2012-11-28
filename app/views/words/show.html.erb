@@ -1,0 +1,11 @@
+<%= @word.name %>
+
+<%= @word.definition %>
+
+<% @word.mnemonics.each do |mnemonic| %>
+
+	<%= mnemonic.text %>
+
+<% end %>
+
+<%= link_to 'Back', words_path %>
