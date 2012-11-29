@@ -1,6 +1,8 @@
 <% @words.each do |word| %>
 
-<div class='name'><%= link_to word.name, word_path(word) %></div>
+<div class='name'>
+	<%= link_to word.name.capitalize, word_path(word) %>
+</div>
 
 <% end %>
 

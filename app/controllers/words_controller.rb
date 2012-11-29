@@ -2,7 +2,7 @@ class WordsController < ApplicationController
   respond_to :html
 
   def index
-  	@words = Word.all
+  	@words = Word.order('name')
   end
 
   def new

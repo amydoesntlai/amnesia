@@ -1,11 +1,12 @@
-<%= @word.name %>
-
-<%= @word.definition %>
-
+<h2><%= @word.name.capitalize %></h2>
+Definition: <%= @word.definition %>
+<ul>
 <% @word.mnemonics.each do |mnemonic| %>
 
-	<%= mnemonic.text %>
+	<li><%= mnemonic.text %></li>
 
 <% end %>
+</ul>
+<%= render '/mnemonics/new' %>
 
 <%= link_to 'Back', words_path %>

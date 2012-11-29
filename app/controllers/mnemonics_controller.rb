@@ -1,18 +1,26 @@
 class MnemonicsController < ApplicationController
 
   respond_to :html
-  
+
   def index
-  	@mnemonics = Mnemonic.all
+  	@word = Word.find(params[:word_id])
+  	@mnemonics = Mnemonic.where(:word_id => @word.id)
   end
 
   def new
+  	@word = Word.find(params[:word_id])
   	@mnemonic = Mnemonic.new
   end
 
   def create
-  	@mnemonic = Mnemonic.create(params[:mnemonic])
-  	respond_with(@mnemonic)
+  	@word = Word.find(params[:word_id])
+  	@mnemonic = Mnemonic.new(params[:mnemonic])
+    @mnemonic.word_id = @word.id
+  	if @mnemonic.save
+  	  redirect_to word_path(@word)
+  	else
+  	  redirect_to :back
+  	end
   end
 
 end
