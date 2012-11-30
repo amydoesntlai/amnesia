@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128002500) do
+ActiveRecord::Schema.define(:version => 20121130084400) do
 
   create_table "mnemonics", :force => true do |t|
     t.text     "text"
     t.integer  "word_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "words", :force => true do |t|
@@ -25,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20121128002500) do
     t.string   "definition"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
 end
