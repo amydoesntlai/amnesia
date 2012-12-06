@@ -1,8 +1,16 @@
 Vocabulary::Application.routes.draw do
 
+  get 'log_out' => 'sessions#destroy', as: 'log_out'
+  get 'newest' => 'newest#index'
+  resources :sessions, only: [:index, :create, :destroy]
+
   resources :words do
     resources :mnemonics
   end
+
+  resources :users, only: [:create, :show]
+
+  root :to => 'words#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

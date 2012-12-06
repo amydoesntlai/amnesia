@@ -1,0 +1,10 @@
+<%= @user.username %>
+<% @user.words.each do |word| %>
+  <%= word.name %>
+  <%= word.definition %>
+ <% end %>
+
+ <% @user.mnemonics.each do |mnemonic| %>
+   <%= mnemonic.word %>
+   <%= mnemonic.text %>
+ <% end %>

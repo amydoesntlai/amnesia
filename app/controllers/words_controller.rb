@@ -5,10 +5,6 @@ class WordsController < ApplicationController
   	@words = Word.order('name')
   end
 
-  def new
-  	@word = Word.new
-  end
-
   def create
   	@word = Word.create(params[:word])
     respond_with(@word)

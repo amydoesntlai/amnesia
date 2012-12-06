@@ -7,11 +7,6 @@ class MnemonicsController < ApplicationController
   	@mnemonics = Mnemonic.where(:word_id => @word.id)
   end
 
-  def new
-  	@word = Word.find(params[:word_id])
-  	@mnemonic = Mnemonic.new
-  end
-
   def create
   	@word = Word.find(params[:word_id])
   	@mnemonic = Mnemonic.new(params[:mnemonic])
