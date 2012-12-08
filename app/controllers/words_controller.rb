@@ -6,7 +6,9 @@ class WordsController < ApplicationController
   end
 
   def create
-  	@word = Word.create(params[:word])
+  	@word = Word.new(params[:word])
+    @word.user = current_user
+    @word.save
     respond_with(@word)
   end
 

@@ -8,10 +8,13 @@
 </head>
 <body>
 <% if current_user %>
-	<%= current_user.username %> <%= link_to '(logout)', log_out_path %>
+	<%= current_user.username %>
+	<%= link_to 'Logout', log_out_path %>
+	<%= link_to 'All words and mnemonics', words_path %>
+	<%= link_to 'My words and mnemonics', user_path(current_user) %>
 <% else %>
 	<%= link_to 'Login', sessions_path %>
-<% end %>
+<% end %><br />
 <%= yield %>
 
 </body>

@@ -11,6 +11,7 @@ class MnemonicsController < ApplicationController
   	@word = Word.find(params[:word_id])
   	@mnemonic = Mnemonic.new(params[:mnemonic])
     @mnemonic.word_id = @word.id
+    @mnemonic.user = current_user
   	if @mnemonic.save
   	  redirect_to word_path(@word)
   	else
