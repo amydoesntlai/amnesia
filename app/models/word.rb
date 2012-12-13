@@ -4,6 +4,7 @@ class Word < ActiveRecord::Base
   has_many :mnemonics, :dependent => :destroy
   belongs_to :user
 
-  validates_uniqueness_of :name
+  validates_presence_of :name, :definition
+  validates_uniqueness_of :name, :case_sensitive => false
 
 end
