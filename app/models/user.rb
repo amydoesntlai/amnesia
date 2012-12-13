@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :words
   has_many :mnemonics
+  has_many :votes
 
 end

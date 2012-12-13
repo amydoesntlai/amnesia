@@ -5,7 +5,9 @@ Vocabulary::Application.routes.draw do
   resources :sessions, only: [:index, :create, :destroy]
 
   resources :words do
-    resources :mnemonics
+    resources :mnemonics do
+      resources :votes, only: [:create]
+    end
   end
 
   resources :users, only: [:create, :show]

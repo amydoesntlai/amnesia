@@ -1,11 +1,13 @@
 <h2><%= @word.name.capitalize %></h2>
 Definition: <%= @word.definition %>
 <ul>
+
 <% @word.mnemonics.each do |mnemonic| %>
 
-	<li><%= mnemonic.text %></li>
+  <%= render '/mnemonics/mnemonic', :word => @word, :mnemonic => mnemonic %>
 
 <% end %>
+
 </ul>
 <%= render '/mnemonics/form' %>
 
