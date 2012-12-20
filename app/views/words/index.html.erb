@@ -1,9 +1,13 @@
-<% @words.each do |word| %>
-
-<div class='name'>
-	<%= link_to word.name.capitalize, word_path(word) %>
+<div class="offset1">
+  <h1>All Words</h1>
+  <table class="table table-striped">
+    <% @words.each do |word| %>
+      <tr>
+        <td>
+        	<%= link_to word.name.capitalize, word_path(word) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= render 'form' %>
 </div>
-
-<% end %>
-
-<%= render 'form' %>

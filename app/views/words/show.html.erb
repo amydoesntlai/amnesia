@@ -1,14 +1,13 @@
-<h2><%= @word.name.capitalize %></h2>
-Definition: <%= @word.definition %>
-<ul>
+<div class="header offset1">
+  <ul class="inline">
+    <li><h1><%= @word.name.capitalize %></h1></li>
+    <li><h3><%= @word.definition %></h3></li>
+  <ul>
+</div>
 
-<% @word.mnemonics.each do |mnemonic| %>
+<%= render '/mnemonics/index' %>
 
-  <%= render '/mnemonics/mnemonic', :word => @word, :mnemonic => mnemonic %>
-
-<% end %>
-
-</ul>
-<%= render '/mnemonics/form' %>
-
-<%= link_to 'Back', words_path %>
+<div class="offset1">
+  <%= render '/mnemonics/form' %>
+  <%= link_to 'Back', words_path %>
+</div>

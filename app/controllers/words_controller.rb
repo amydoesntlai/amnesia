@@ -14,6 +14,7 @@ class WordsController < ApplicationController
 
   def show
   	@word = Word.find(params[:id])
+    @mnemonics = @word.mnemonics
   end
 
 end

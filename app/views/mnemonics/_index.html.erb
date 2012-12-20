@@ -1,0 +1,8 @@
+<table class="table table-striped offset1">
+  <th>Vote!</th>
+  <th>Score</th>
+  <th>Mnemonic</th>
+  <% @mnemonics.each do |mnemonic| %>
+    <tr><%= render '/mnemonics/show', :word => @word, :mnemonic => mnemonic %></tr>
+  <% end %>
+</table>

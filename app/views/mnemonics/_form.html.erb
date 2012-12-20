@@ -1,5 +1,5 @@
 <%= form_for [@word, @mnemonic = Mnemonic.new] do |f| %>
-  <%= f.label 'Submit a new mnemonic' %><br>
+  <%= f.label 'Submit a new mnemonic:' %><br>
   <%= f.text_area :text %><br>
   <%= f.submit %>
 <% end %>

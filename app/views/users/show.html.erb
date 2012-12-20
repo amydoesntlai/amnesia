@@ -1,10 +1,4 @@
-<%= @user.username %>'s words<br />
-<% @user.words.each do |word| %>
-  <%= word.name %>
-  <%= word.definition %><br />
- <% end %>
-<%= @user.username %>'s mnemonics<br />
- <% @user.mnemonics.each do |mnemonic| %>
-   <%= mnemonic.word.name %>
-   <%= mnemonic.text %><br />
- <% end %>
+<div class="offset1">
+  <h1><%= @user.username.capitalize %>'s mnemonics</h1>
+</div>
+<%= render '/mnemonics/index'%>

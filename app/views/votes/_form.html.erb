@@ -1,9 +1,10 @@
-<%= form_for [word, mnemonic, vote = Vote.new] do |f| %>
-  <%= f.hidden_field :score, :value => 1 %>
-  <%= f.submit '+1' %>
-<% end %>
-
-<%= form_for [word, mnemonic, vote = Vote.new] do |f| %>
-  <%= f.hidden_field :score, :value => -1 %>
-  <%= f.submit '-1' %>
-<% end %>
+<td style="width:80px">
+  <%= form_for [word, mnemonic, vote = Vote.new], :html => { :style => "display:inline" } do |f| %>
+    <%= f.hidden_field :score, :value => 1 %>
+    <%= f.submit '+1' %>
+  <% end %>
+  <%= form_for [word, mnemonic, vote = Vote.new], :html => { :style => "display:inline" } do |f| %>
+    <%= f.hidden_field :score, :value => -1 %>
+    <%= f.submit '-1' %>
+  <% end %>
+</td>

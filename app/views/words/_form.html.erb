@@ -1,7 +1,10 @@
-<%= form_for @word = Word.new do |f| %>
-  <%= f.label 'Word' %>
-  <%= f.text_field :name %>
-  <%= f.label :definition %>
-  <%= f.text_field :definition %>
-  <%= f.submit %>
-<% end %>
+<form class="form-inline">
+  <h4>Add word</h4>
+  <%= form_for @word = Word.new do |f| %>
+    <%= f.label 'Word' %>
+    <%= f.text_field :name %>
+    <%= f.label :definition %>
+    <%= f.text_field :definition %>
+    <%= f.submit %>
+  <% end %>
+</form>
