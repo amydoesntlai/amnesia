@@ -3,6 +3,7 @@
   <th>Score</th>
   <th>Mnemonic</th>
   <% @mnemonics.each do |mnemonic| %>
+    <% @word = mnemonic.word %>
     <tr><%= render '/mnemonics/show', :word => @word, :mnemonic => mnemonic %></tr>
   <% end %>
 </table>
